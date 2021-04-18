@@ -16,7 +16,7 @@ url_3080_3 = 'https://www.canadacomputers.com/product_info.php?cPath=43_557_559&
 url_3080_4 = 'https://www.canadacomputers.com/product_info.php?cPath=43_557_559&item_id=181348'
 headers = {"Cookie": "preferloc=MISS;"}
 
-user = 'chensilun1997@gmail.com'
+user = 'your_email@gmail.com'
 
 def get_html_info(url):
     response = requests.get(url, headers = headers)
@@ -61,7 +61,7 @@ def email(item_name, content):
     context = ssl.create_default_context()
 
     with smtplib.SMTP_SSL("smtp.gmail.com", port, context = context) as server:
-        server.login('email@gmail.com', 'passord')
+        server.login('test_email@gmail.com', 'password')
         server.sendmail(sender, user, msg.as_string())
         print('Email sent for ' + item_name)
 
